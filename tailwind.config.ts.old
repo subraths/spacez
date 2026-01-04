@@ -1,0 +1,30 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    './app/**/*.{js,ts,jsx,tsx,mdx}', // For the App Router
+    './pages/**/*.{js,ts,jsx,tsx,mdx}', // For the Pages Router
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/**/*.{js,ts,jsx,tsx,mdx}', // If using a src directory
+  ],
+  theme: {
+    extend: {
+      colors: {
+        // used for texts titles and headings
+        primary: {
+          1: "#4B4E4B",
+          2: "#874B2C",
+        },
+        // text color for paragraphs and general text
+        secondary: {
+          1: "#7D817D",
+        },
+        // for surface backgrounds
+        surface: {
+          1: "#C16B3E",
+          2: "#FFFFFF",
+        },
+      }
+    },
+  },
+  plugins: [],
+};

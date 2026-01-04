@@ -2,25 +2,55 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+
+  /* Primary colors - for texts, titles, and headings */
+  --primary-1: #4B4E4B;
+  --primary-2: #874B2C;
+  --primary-3: #9A5632;
+
+  /* Secondary colors - for paragraphs and general text */
+  --secondary-1: #7D817D;
+
+  /* Surface colors - for backgrounds */
+  --surface-1: #C16B3E;
+  --surface-2: #FDF9F7;
 }
 
 @theme inline {
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+
+  /* Primary colors */
+  --color-primary-1: var(--primary-1);
+  --color-primary-2: var(--primary-2);
+  --color-primary-3: var(--primary-3);
+
+  /* Secondary colors */
+  --color-secondary-1: var(--secondary-1);
+
+  /* Surface colors */
+  --color-surface-1: var(--surface-1);
+  --color-surface-2: var(--surface-2);
+
+  /* Fonts */
+  --font-sans:  var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+/* Dark mode */
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground:  #ededed;
+
+    --primary-1: #A8ABA8;
+    --primary-2: #D4926E;
+    --secondary-1: #B0B4B0;
+    --surface-1: #E89B6F;
+    --surface-2: #1a1a1a;
   }
-}
+} */
 
 body {
   background: var(--background);
-  color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
