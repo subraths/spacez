@@ -14,7 +14,7 @@ export default function BaseOfferCard({
   description,
 }: Props) {
   return (
-    <div className="flex gap-4">
+    <div className="flex gap-1">
       <div className={`${accentColor} p-4 flex justify-center items-center`}>
         <span
           className="font-serif font-semibold text-2xl text-background"
