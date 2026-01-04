@@ -1,4 +1,4 @@
-import { useAuth } from "@/app/context/AuthContext";
+import { useAuth } from "@/context/AuthContext";
 import BaseSurfaceBtn from "../BaseSurfaceBtn";
 import { formatCurrency } from "@/utils/formatCurrency";
 import Image from "next/image";

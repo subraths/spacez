@@ -1,7 +1,14 @@
+"use client";
+
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+
 export default function Home() {
-  return (
-    <div className="p-4">
-      explore page
-    </div>
-  );
+  const router = useRouter();
+
+  useEffect(() => {
+    router.push("/offers");
+  }, []);
+
+  return <div className="p-4">explore page</div>;
 }

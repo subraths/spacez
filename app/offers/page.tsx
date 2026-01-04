@@ -1,7 +1,7 @@
 "use client";
 
 import SigninToUnlock from "@/components/SigninToUnlock";
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from "../../context/AuthContext";
 import Coupon from "@/components/offers/Coupon";
 import { formatCurrency } from "@/utils/formatCurrency";
 import GiftCard from "@/components/offers/GiftCard";
@@ -65,7 +65,9 @@ export default function Offers() {
       <section className="flex flex-col gap-4">
         <h1 className="text-primary-1 font-semibold text-2xl">Offers</h1>
         {!auth.checkAuthStatus() ? (
-          <SigninToUnlock />
+          <div className="max-w-lg">
+            <SigninToUnlock />
+          </div>
         ) : (
           <h2 className="text-primary-1 text-lg">
             Book directly with us to get exclusive benefits

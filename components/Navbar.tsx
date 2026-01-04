@@ -9,7 +9,7 @@ import { CiHeart } from "react-icons/ci";
 import { LuCircleUserRound } from "react-icons/lu";
 import { IoMdMenu } from "react-icons/io";
 import { usePathname } from "next/navigation";
-import { useAuth } from "@/app/context/AuthContext";
+import { useAuth } from "@/context/AuthContext";
 
 export default function Navbar() {
   const pathName = usePathname();
