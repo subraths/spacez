@@ -33,7 +33,7 @@ export default function BaseOfferCard({
         </div>
         <hr className="border-t border-t-gray-300" />
         <div>
-          <button className="text-secondary-1 cursor-pointer hover:text-primary-1">
+          <button className="text-secondary-1 font-semibold cursor-pointer hover:text-primary-1">
             Read more
           </button>
         </div>

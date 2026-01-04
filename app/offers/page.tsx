@@ -6,6 +6,8 @@ import Coupon from "@/components/offers/Coupon";
 import { formatCurrency } from "@/utils/formatCurrency";
 import GiftCard from "@/components/offers/GiftCard";
 import PaymentOffer from "@/components/offers/PaymentOffer";
+import PaymentOffersPlaceholder from "@/components/offers/PaymentOffersPlaceholder";
+import GiftCardsPlaceholder from "@/components/offers/GiftCardsPlaceholder";
 
 export default function Offers() {
   const auth = useAuth();
@@ -85,33 +87,44 @@ export default function Offers() {
       </section>
       <section className="my-6 flex flex-col gap-4">
         <h2 className="font-semibold text-primary-1">Bonus gift cards:</h2>
-        <p className="text-secondary-1">Collect multiple of these</p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {giftCards.map((giftCard) => (
-            <GiftCard
-              bannerText={giftCard.bannerText}
-              couponCode={giftCard.couponCode}
-              img={giftCard.img}
-              accentColor={giftCard.accentColor}
-              description={giftCard.description}
-            />
-          ))}
-        </div>
+        {auth.checkAuthStatus() ? (
+          <>
+            <p className="text-secondary-1">Collect multiple of these</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {giftCards.map((giftCard, i) => (
+                <GiftCard
+                  key={i}
+                  bannerText={giftCard.bannerText}
+                  couponCode={giftCard.couponCode}
+                  img={giftCard.img}
+                  accentColor={giftCard.accentColor}
+                  description={giftCard.description}
+                />
+              ))}
+            </div>
+          </>
+        ) : (
+          <GiftCardsPlaceholder />
+        )}
       </section>
       <section className="my-6 flex flex-col gap-4">
-        <h2 className="font-semibold text-primary-1">Bonus gift cards:</h2>
-        <p className="text-secondary-1">Collect multiple of these</p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {paymentOffers.map((offer) => (
-            <PaymentOffer
-              bannerText={offer.bannerText}
-              couponCode={offer.couponCode}
-              img={offer.img}
-              accentColor={offer.accentColor}
-              description={offer.description}
-            />
-          ))}
-        </div>
+        <h2 className="font-semibold text-primary-1">Payment offers:</h2>
+        {auth.checkAuthStatus() ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {paymentOffers.map((offer, i) => (
+              <PaymentOffer
+                key={i}
+                bannerText={offer.bannerText}
+                couponCode={offer.couponCode}
+                img={offer.img}
+                accentColor={offer.accentColor}
+                description={offer.description}
+              />
+            ))}
+          </div>
+        ) : (
+          <PaymentOffersPlaceholder />
+        )}
       </section>
     </div>
   );
