@@ -42,7 +42,7 @@ export default function GiftCard({
       }
       description={description}
       title={
-        <div className="uppercase text-primary-1 text-2xl font-semibold">
+        <div className="uppercase text-primary-1 text-xl font-semibold">
           <span className="pr-2">
             <Image
               className="inline"
